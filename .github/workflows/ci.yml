@@ -1,0 +1,20 @@
+name: CI Hello World
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  run-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Ejecutar Hello World
+        run: node helloWorld.js
